@@ -23,6 +23,13 @@ position = Vector2(15, 21)
 position = Vector2(561, 234)
 shape = SubResource("RectangleShape2D_circx")
 
+[node name="TileDropArea" type="Area2D" parent="TileDropArea"]
+position = Vector2(15, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDropArea/TileDropArea"]
+position = Vector2(561, 234)
+shape = SubResource("RectangleShape2D_circx")
+
 [node name="GameUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = 3
 
@@ -51,3 +58,4 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="area_entered" from="TileDropArea" to="." method="_on_tile_drop_area_area_entered"]
+[connection signal="area_entered" from="TileDropArea/TileDropArea" to="." method="_on_tile_drop_area_area_entered"]

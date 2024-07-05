@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tile" load_steps=2 format=3 uid="uid://d26shdb4r724w"]
+
+[ext_resource type="Script" path="res://custom_resources/tile.gd" id="1_gip1c"]
+
+[resource]
+script = ExtResource("1_gip1c")
+id = ""
+type = 1
+value = 0
+wind = 4
+dragon = 2
