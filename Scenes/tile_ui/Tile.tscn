@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhppvvop7i437"]
 
-[ext_resource type="Script" path="res://Scenes/tile_ui/Tile.gd" id="1_x0eb2"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/tile_ui.gd" id="1_eu3we"]
 [ext_resource type="Script" path="res://Scenes/tile_ui/TileStateMachine.gd" id="2_knowa"]
 [ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_base_state.gd" id="3_x3t8c"]
 [ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_clicked_state.gd" id="4_n11pf"]
@@ -20,7 +20,7 @@ offset_right = -1107.0
 offset_bottom = -588.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x0eb2")
+script = ExtResource("1_eu3we")
 
 [node name="Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -47,8 +47,9 @@ collision_mask = 2
 position = Vector2(22.5, 30)
 shape = SubResource("RectangleShape2D_j06o4")
 
-[node name="TileStateMachine" type="Node" parent="."]
+[node name="TileStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_knowa")
+initial_state = NodePath("TileBaseState")
 
 [node name="TileBaseState" type="Node" parent="TileStateMachine"]
 script = ExtResource("3_x3t8c")
@@ -68,3 +69,5 @@ state = 3
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

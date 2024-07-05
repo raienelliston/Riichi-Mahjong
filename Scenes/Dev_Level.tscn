@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdn7pyscncukm"]
+[gd_scene load_steps=6 format=3 uid="uid://cdn7pyscncukm"]
 
 [ext_resource type="Script" path="res://Scenes/Dev_Level.gd" id="1_l0nw6"]
 [ext_resource type="Texture2D" uid="uid://br8ae20no71vy" path="res://Assets/Backgrounds/Untitled.png" id="2_ywl85"]
 [ext_resource type="PackedScene" uid="uid://bhppvvop7i437" path="res://Scenes/tile_ui/Tile.tscn" id="3_pocak"]
+[ext_resource type="Script" path="res://Scenes/ui/hand.gd" id="3_wrigp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_circx"]
-size = Vector2(1152, 400)
+size = Vector2(1152, 510)
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_l0nw6")
@@ -19,7 +20,7 @@ texture = ExtResource("2_ywl85")
 position = Vector2(15, 21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileDropArea"]
-position = Vector2(561, 179)
+position = Vector2(561, 234)
 shape = SubResource("RectangleShape2D_circx")
 
 [node name="GameUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
@@ -38,6 +39,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+script = ExtResource("3_wrigp")
 
 [node name="Control" parent="GameUI/Hand" instance=ExtResource("3_pocak")]
 layout_mode = 2
