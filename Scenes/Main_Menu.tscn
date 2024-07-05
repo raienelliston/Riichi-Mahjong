@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://chodawgcom5rw"]
 
-[ext_resource type="Texture2D" uid="uid://ckrrlkwx7uwi2" path="res://Untitled.png" id="1_go4pv"]
-[ext_resource type="Script" path="res://Main_Menu.gd" id="1_q0f1x"]
+[ext_resource type="Script" path="res://Scenes/Main_Menu.gd" id="1_3qxi4"]
+[ext_resource type="Texture2D" uid="uid://ckrrlkwx7uwi2" path="res://Assets/Backgrounds/Main_Menu_Background.png" id="2_xdai2"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q0f1x")
+script = ExtResource("1_3qxi4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -49,7 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_go4pv")
+texture = ExtResource("2_xdai2")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Setttings Button" to="." method="_on_setttings_button_pressed"]
