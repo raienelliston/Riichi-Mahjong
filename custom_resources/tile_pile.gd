@@ -1,5 +1,5 @@
 class_name TilePile
-extends Node
+extends Resource
 
 signal tile_pile_size_changed(tile_amount)
 
@@ -29,3 +29,8 @@ func _to_string() -> String:
 	for i in range(tiles.size()):
 		_tile_strings.append("%s: %s" % [i+1, tiles[i].id])
 	return "\n".join(_tile_strings)
+
+func get_size() -> int:
+	var size = tiles.size()
+	return size
+	

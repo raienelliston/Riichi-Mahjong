@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TilePile" load_steps=2 format=3 uid="uid://di61eapjofctt"]
+
+[ext_resource type="Script" path="res://custom_resources/tile_pile.gd" id="1_8t0ob"]
+
+[resource]
+script = ExtResource("1_8t0ob")
+tiles = Array[Resource("res://custom_resources/tile.gd")]([])
