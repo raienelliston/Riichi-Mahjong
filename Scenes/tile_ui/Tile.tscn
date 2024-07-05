@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhppvvop7i437"]
+[gd_scene load_steps=8 format=3 uid="uid://bhppvvop7i437"]
 
 [ext_resource type="Script" path="res://Scenes/tile_ui/Tile.gd" id="1_x0eb2"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/TileStateMachine.gd" id="2_knowa"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_base_state.gd" id="3_x3t8c"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_clicked_state.gd" id="4_n11pf"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_dragging_state.gd" id="5_opr57"]
+[ext_resource type="Script" path="res://Scenes/tile_ui/tile_states/tile_released_state.gd" id="6_h7u4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j06o4"]
 size = Vector2(45, 60)
 
-[node name="Control" type="Control"]
+[node name="TileUI" type="Control"]
 custom_minimum_size = Vector2(45, 60)
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="State" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -40,3 +46,25 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(22.5, 30)
 shape = SubResource("RectangleShape2D_j06o4")
+
+[node name="TileStateMachine" type="Node" parent="."]
+script = ExtResource("2_knowa")
+
+[node name="TileBaseState" type="Node" parent="TileStateMachine"]
+script = ExtResource("3_x3t8c")
+
+[node name="TileClickedState" type="Node" parent="TileStateMachine"]
+script = ExtResource("4_n11pf")
+state = 1
+
+[node name="TileDragingState" type="Node" parent="TileStateMachine"]
+script = ExtResource("5_opr57")
+state = 2
+
+[node name="TileReleaseState" type="Node" parent="TileStateMachine"]
+script = ExtResource("6_h7u4e")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
