@@ -41,7 +41,6 @@ offset_bottom = 25.0
 text = "State"
 
 [node name="DropPointDetector" type="Area2D" parent="."]
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(22.5, 30)

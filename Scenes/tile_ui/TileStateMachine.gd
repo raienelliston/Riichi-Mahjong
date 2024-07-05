@@ -13,7 +13,6 @@ func init(tile: TileUI) -> void:
 			child.tile_ui = tile
 			
 			if initial_state:
-				print("test")
 				initial_state.enter()
 				current_state = initial_state
 				

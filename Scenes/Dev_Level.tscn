@@ -49,3 +49,5 @@ layout_mode = 2
 
 [node name="Control3" parent="GameUI/Hand" instance=ExtResource("3_pocak")]
 layout_mode = 2
+
+[connection signal="area_entered" from="TileDropArea" to="." method="_on_tile_drop_area_area_entered"]
