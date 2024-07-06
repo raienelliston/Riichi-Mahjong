@@ -6,7 +6,7 @@
 script = ExtResource("1_0li47")
 id = ""
 type = 0
-value = 4
-suit = 0
+value = 1
+suit = 1
 wind = 4
 dragon = 3

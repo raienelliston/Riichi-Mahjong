@@ -1,7 +1,71 @@
-[gd_resource type="Resource" script_class="TilePile" load_steps=2 format=3 uid="uid://di61eapjofctt"]
+[gd_resource type="Resource" script_class="TilePile" load_steps=10 format=3 uid="uid://di61eapjofctt"]
 
-[ext_resource type="Script" path="res://custom_resources/tile_pile.gd" id="1_8t0ob"]
+[ext_resource type="Script" path="res://custom_resources/tile_pile.gd" id="1_clgdh"]
+[ext_resource type="Script" path="res://custom_resources/tile.gd" id="2_lwd7o"]
+
+[sub_resource type="Resource" id="Resource_d6cu8"]
+script = ExtResource("2_lwd7o")
+id = "South Wind"
+type = 2
+value = 0
+suit = 3
+wind = 2
+dragon = 3
+
+[sub_resource type="Resource" id="Resource_fot5m"]
+script = ExtResource("2_lwd7o")
+id = "East Wind"
+type = 2
+value = 0
+suit = 3
+wind = 0
+dragon = 3
+
+[sub_resource type="Resource" id="Resource_07u8v"]
+script = ExtResource("2_lwd7o")
+id = "North Wind"
+type = 2
+value = 0
+suit = 3
+wind = 1
+dragon = 3
+
+[sub_resource type="Resource" id="Resource_dfywm"]
+script = ExtResource("2_lwd7o")
+id = "Red Dragon"
+type = 1
+value = 0
+suit = 3
+wind = 4
+dragon = 1
+
+[sub_resource type="Resource" id="Resource_o45fg"]
+script = ExtResource("2_lwd7o")
+id = ""
+type = 0
+value = 0
+suit = 0
+wind = 0
+dragon = 0
+
+[sub_resource type="Resource" id="Resource_bgvby"]
+script = ExtResource("2_lwd7o")
+id = ""
+type = 0
+value = 0
+suit = 0
+wind = 0
+dragon = 0
+
+[sub_resource type="Resource" id="Resource_ftyod"]
+script = ExtResource("2_lwd7o")
+id = ""
+type = 0
+value = 0
+suit = 0
+wind = 0
+dragon = 0
 
 [resource]
-script = ExtResource("1_8t0ob")
-tiles = Array[Resource("res://custom_resources/tile.gd")]([])
+script = ExtResource("1_clgdh")
+tiles = Array[ExtResource("2_lwd7o")]([SubResource("Resource_d6cu8"), SubResource("Resource_fot5m"), SubResource("Resource_07u8v"), SubResource("Resource_d6cu8"), SubResource("Resource_dfywm"), SubResource("Resource_o45fg"), SubResource("Resource_bgvby"), SubResource("Resource_ftyod"), SubResource("Resource_d6cu8"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

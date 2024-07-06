@@ -6,7 +6,7 @@
 script = ExtResource("1_uyshj")
 id = ""
 type = 0
-value = 8
+value = 9
 suit = 2
 wind = 4
 dragon = 3

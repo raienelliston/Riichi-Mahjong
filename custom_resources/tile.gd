@@ -10,5 +10,6 @@ enum Dragon {Green, Red, White, none}
 @export var id: String
 @export var type: Type
 @export var value: int
+@export var suit: Suit
 @export var wind: Wind
 @export var dragon: Dragon
