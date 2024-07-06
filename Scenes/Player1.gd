@@ -9,3 +9,5 @@ func _ready():
 func take_turn():
 	pass
 	
+func draw_from_pool():
+	pass

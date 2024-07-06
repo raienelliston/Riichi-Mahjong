@@ -1,4 +1,4 @@
-class_name TilePile
+class_name TilePool
 extends Resource
 
 signal tile_pile_size_changed(tile_amount)
@@ -6,6 +6,10 @@ signal tile_pile_size_changed(tile_amount)
 @export var tiles: Array[Tile] = []
 
 enum SeatWinds {West, East, North, South, None}
+
+func init_pool(initial_tiles: Array):
+	tiles = initial_tiles.duplicate()
+	tiles.shuffle()
 
 func empty() -> bool:
 	return tiles.is_empty()
@@ -18,10 +22,7 @@ func draw_tile() -> Tile:
 func add_tile(tile: Tile):
 	tiles.append(tile)
 	tile_pile_size_changed.emit(tiles.size())
-	
-func shuffle() -> void:
-	tiles.shuffle()
-	
+
 func clear_pile() -> void:
 	tiles.clear()
 	tile_pile_size_changed.emit(tiles.size())

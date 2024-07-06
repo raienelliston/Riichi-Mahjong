@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdn7pyscncukm"]
+[gd_scene load_steps=12 format=3 uid="uid://cdn7pyscncukm"]
 
 [ext_resource type="Script" path="res://Scenes/Dev_Level.gd" id="1_l0nw6"]
 [ext_resource type="Texture2D" uid="uid://br8ae20no71vy" path="res://Assets/Backgrounds/Untitled.png" id="2_ywl85"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/Player2.gd" id="7_wsvpv"]
 [ext_resource type="Script" path="res://Scenes/Player3.gd" id="8_448j0"]
 [ext_resource type="Script" path="res://Scenes/Player4.gd" id="9_unowp"]
+[ext_resource type="Script" path="res://Scenes/DiscardPile.gd" id="10_oa1au"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_circx"]
 size = Vector2(1152, 510)
@@ -69,5 +70,8 @@ script = ExtResource("8_448j0")
 
 [node name="Player4" type="Node" parent="."]
 script = ExtResource("9_unowp")
+
+[node name="DiscardPile" type="Node" parent="."]
+script = ExtResource("10_oa1au")
 
 [connection signal="area_entered" from="TileDropArea" to="." method="_on_tile_drop_area_area_entered"]
