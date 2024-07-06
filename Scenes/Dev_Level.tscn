@@ -73,5 +73,3 @@ script = ExtResource("9_unowp")
 
 [node name="DiscardPile" type="Node" parent="."]
 script = ExtResource("10_oa1au")
-
-[connection signal="area_entered" from="TileDropArea" to="." method="_on_tile_drop_area_area_entered"]
