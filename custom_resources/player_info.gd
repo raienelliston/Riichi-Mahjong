@@ -10,15 +10,13 @@ signal hand_updated
 var concealed: bool : set = update_conceal
 var balance: int : set = set_balance
 var hand: Array[Tile] = []
-var SeatWind: SeatWinds : set = set_seat
+var SeatWind: SeatWinds = None
+var SeatNumber = 0
 #idk how to do nested, so every tile in this repersents a set
 var sets: Array[Tile] = []
 var kans: Array[Tile]
 #each tile repersents the start of a straigt
 var straights: Array[Tile] = []
-
-func set_seat() -> SeatWinds:
-	pass
 
 func set_balance(value : int) -> void:
 	balance = value

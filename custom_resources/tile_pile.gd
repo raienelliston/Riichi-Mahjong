@@ -5,7 +5,7 @@ signal tile_pile_size_changed(tile_amount)
 
 @export var tiles: Array[Tile] = []
 
-enum SeatWinds {West, East, North, South}
+enum SeatWinds {West, East, North, South, None}
 
 func empty() -> bool:
 	return tiles.is_empty()
