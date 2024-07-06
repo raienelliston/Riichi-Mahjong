@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdn7pyscncukm"]
+[gd_scene load_steps=11 format=3 uid="uid://cdn7pyscncukm"]
 
 [ext_resource type="Script" path="res://Scenes/Dev_Level.gd" id="1_l0nw6"]
 [ext_resource type="Texture2D" uid="uid://br8ae20no71vy" path="res://Assets/Backgrounds/Untitled.png" id="2_ywl85"]
 [ext_resource type="PackedScene" uid="uid://bhppvvop7i437" path="res://Scenes/tile_ui/Tile.tscn" id="3_pocak"]
 [ext_resource type="Script" path="res://Scenes/ui/hand.gd" id="3_wrigp"]
+[ext_resource type="Script" path="res://Scenes/GameManager.gd" id="5_v54ct"]
+[ext_resource type="Script" path="res://Scenes/Player1.gd" id="6_coyep"]
+[ext_resource type="Script" path="res://Scenes/Player2.gd" id="7_wsvpv"]
+[ext_resource type="Script" path="res://Scenes/Player3.gd" id="8_448j0"]
+[ext_resource type="Script" path="res://Scenes/Player4.gd" id="9_unowp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_circx"]
 size = Vector2(1152, 510)
 
-[node name="Control" type="Node2D"]
+[node name="GameScene" type="Node2D"]
 script = ExtResource("1_l0nw6")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -20,13 +25,6 @@ texture = ExtResource("2_ywl85")
 position = Vector2(15, 21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileDropArea"]
-position = Vector2(561, 234)
-shape = SubResource("RectangleShape2D_circx")
-
-[node name="TileDropArea" type="Area2D" parent="TileDropArea"]
-position = Vector2(15, 21)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDropArea/TileDropArea"]
 position = Vector2(561, 234)
 shape = SubResource("RectangleShape2D_circx")
 
@@ -57,5 +55,19 @@ layout_mode = 2
 [node name="Control3" parent="GameUI/Hand" instance=ExtResource("3_pocak")]
 layout_mode = 2
 
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_v54ct")
+
+[node name="Player1" type="Node" parent="."]
+script = ExtResource("6_coyep")
+
+[node name="Player2" type="Node" parent="."]
+script = ExtResource("7_wsvpv")
+
+[node name="Player3" type="Node" parent="."]
+script = ExtResource("8_448j0")
+
+[node name="Player4" type="Node" parent="."]
+script = ExtResource("9_unowp")
+
 [connection signal="area_entered" from="TileDropArea" to="." method="_on_tile_drop_area_area_entered"]
-[connection signal="area_entered" from="TileDropArea/TileDropArea" to="." method="_on_tile_drop_area_area_entered"]

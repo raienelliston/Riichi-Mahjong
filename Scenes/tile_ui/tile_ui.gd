@@ -25,7 +25,6 @@ func _on_mouse_exited() -> void:
 	tile_state_machine.on_mouse_exited()
 
 func _on_drop_point_detector_area_entered(area):
-	print("balls")
 	if not targets.has(area):
 		targets.append(area)
 
