@@ -5,6 +5,8 @@ signal tile_pile_size_changed(tile_amount)
 
 @export var tiles: Array[Tile] = []
 
+enum SeatWinds {West, East, North, South}
+
 func empty() -> bool:
 	return tiles.is_empty()
 	
@@ -20,7 +22,7 @@ func add_tile(tile: Tile):
 func shuffle() -> void:
 	tiles.shuffle()
 	
-func clear() -> void:
+func clear_pile() -> void:
 	tiles.clear()
 	tile_pile_size_changed.emit(tiles.size())
 	
